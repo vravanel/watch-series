@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div {{ react_component('Pages/Login', { error: error ? { message: error.messageKey|trans(error.messageData, 'security') } : null, csrftoken: csrf_token('authenticate'), appuser: app.user ? { useridentifier: app.user.useridentifier } : null }) }}></div>
+
+{% endblock %}
