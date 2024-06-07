@@ -19,4 +19,12 @@ class ApiController extends AbstractController
       return new JsonResponse(
         $series, Response::HTTP_OK, [], true);
     }
+
+    #[Route('/serie/{id}', name : 'serie', methods: ['GET'])]
+    public function getSerieById(SeriesService $seriesService, SerializerInterface $serializer, int $id): JsonResponse
+    {
+        $serie = $serializer->serialize($seriesService->getSerieById($id), 'json');
+      return new JsonResponse(
+        $serie, Response::HTTP_OK, [], true);
+    }
 }

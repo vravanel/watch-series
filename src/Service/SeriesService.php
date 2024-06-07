@@ -27,4 +27,16 @@ class SeriesService
        return $reponse->toArray();   
 
     }
+
+    public function getSerieById(int $id): array 
+    {
+        $reponse = $this->httpClient->request('GET', 'https://api.themoviedb.org/3/tv/' . $id . '?language=fr-FR', [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $this->apiKey ,
+                'accept' => 'application/json',
+              ],
+            ]); 
+       return $reponse->toArray();   
+
+    }
 }
