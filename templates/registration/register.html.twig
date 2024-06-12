@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+
+	<div {{ react_component('Pages/Register', {'csrf_token' : csrf_token } ) }}></div>
+
+
+{% endblock %}

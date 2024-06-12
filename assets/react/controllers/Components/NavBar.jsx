@@ -34,7 +34,10 @@ export default function NavBar() {
                             <Link>Favoris</Link>
                         </ListItem>
                         <ListItem>
-                            <Link>Connexion</Link>
+                            <Link href="/register">Inscription</Link>
+                        </ListItem>
+                        <ListItem>
+                            <Link href="/login">Connexion</Link>
                         </ListItem>
                     </List>
                 </nav>
